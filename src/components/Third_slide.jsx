@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 export default function Third_slide(props) {
   const { setSlideThird } = props;
+  const modalMainRef = useRef(null);
   const modalContentRef = useRef(null);
   const [slide, setSlide] = useState(0);
   const [modalON, setModalON] = useState(false);
@@ -48,7 +49,7 @@ export default function Third_slide(props) {
   return (
     <div className="carusel__component__third components">
       <div className="main__container__third">
-        <div id="myModal" className="modal">
+        <div id="myModal" className="modal" ref={modalMainRef}>
           <div className="modal-content">
             <span onClick={handleCloseModal} className="close">
               &times;
