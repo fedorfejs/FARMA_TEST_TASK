@@ -40,9 +40,9 @@ export default function Third_slide(props) {
       modalContentRef.current.style.transform = `translateX(${slide}px)`;
     }
     if (modalON) {
-      document.getElementById("myModal").style.display = "block";
+      modalMainRef.current.style.display = "block";
     } else {
-      document.getElementById("myModal").style.display = "none";
+      modalMainRef.current.style.display = "none";
     }
   }, [modalON, slide]);
 
