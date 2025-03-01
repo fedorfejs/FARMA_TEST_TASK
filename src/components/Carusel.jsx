@@ -11,7 +11,9 @@ export default function Carusel() {
   const startX = useRef(0);
   const startPosition = useRef(0);
   const handleTouchStart = (e) => {
-    setAnimation(false);
+    if (slide !== 0) {
+      setAnimation(false);
+    }
 
     startX.current = e.touches[0].clientX;
     document.addEventListener("touchmove", handleTouchMove, { once: true });
@@ -22,11 +24,8 @@ export default function Carusel() {
   const handleTouchMove = (e) => {
     const touchX = e.touches[0].clientX;
     const deltaX = touchX - startX.current;
-    console.log(deltaX);
 
-    if (deltaX < -5) {
-      console.log("left");
-
+    if (deltaX < -7) {
       setAnimation(true);
       if (slide === -1024) {
         return;
@@ -34,7 +33,7 @@ export default function Carusel() {
         setSlide((prev) => prev - 1024);
       }
     }
-    if (deltaX > 5) {
+    if (deltaX > 7) {
       setAnimation(true);
       if (slide === 1024) {
         return;

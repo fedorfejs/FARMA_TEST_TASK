@@ -210,7 +210,7 @@ button :hover {
 }
 
 .pink_sperm {
-  background-image: url(" ../src/images/pink_sperm.png");
+  background-image: url("../src/images/pink_sperm.png");
   background-repeat: no-repeat;
   width: 300px;
   height: 150px;
@@ -350,7 +350,7 @@ button :hover {
 
 .text-container-container {
   z-index: 1;
-  overflow: hidden;
+  overflow: auto;
 
   position: absolute;
   border-radius: 34px;
@@ -368,6 +368,10 @@ button :hover {
   -webkit-box-shadow: 0px 0px 30px 54px rgba(243, 243, 243, 0.5);
   -moz-box-shadow: 0px 0px 30px 54px rgba(243, 243, 243, 0.5);
   box-shadow: 0px 0px 30px 54px rgba(243, 243, 243, 0.5);
+}
+
+.text-container-container::-webkit-scrollbar {
+  display: none;
 }
 
 .slider-container {
@@ -403,7 +407,7 @@ button :hover {
 
 .text-container {
   width: 700px;
-  height: 600px;
+  height: 350px;
   background-color: rgb(255, 255, 255);
   color: #000000;
   padding-left: 20px;
@@ -424,11 +428,13 @@ button :hover {
 }
 
 .text__p__slider__content {
+  overflow: hidden;
   font-family: "Gilroy-Light", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 1.5;
   padding-left: 30px;
   padding-right: 20px;
+  margin-top: 30px;
   position: absolute;
   width: 600px;
   height: auto;
